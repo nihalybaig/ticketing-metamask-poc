@@ -36,13 +36,48 @@ const CARD_DETAILS = [
     price: "$50",
   },
 ];
+
 const HOT_CARD_DETAILS = [
   {
-    title: "Ampol State of Origin",
-    text: "3 upcoming events",
+    title: "Ampol State of Origin - Festival",
+    number_of_events: 3,
     img: "https://event-images.tixel.com/cdn-cgi/image/width=600,format=auto/media/images/633ad422bd221f7c33f04d9f7d756c4c_1678837414_7938_l.jpg",
   },
+  {
+    title: "Formula 1 Australian Grand Prix 2023",
+    number_of_events: 7,
+    img: "https://public-uploads-production.tixel.com/covers/P86bOMRISBl38Wzf81vOxbRRkLX8DZDrKbPFMnEm.jpg",
+  },
+  {
+    title: "Melbourne International Comedy Festival",
+    number_of_events: 138,
+    img: "https://public-uploads-production.tixel.com/covers/QZs8pY7xaczAXp2H4BH93m4Hwkoei3IY1IhhpAFS.png",
+  },
 ];
+
+const ARTISTS_CARD_DETAILS = [
+  {
+    title: "TIME • RONE",
+    number_of_events: 34,
+    img: "https://event-images.tixel.com/cdn-cgi/image/width=100,format=auto/media/images/4db4c85c7cf1158c2c1e9d33349fd564_1664422183_7867_s.jpg",
+  },
+  {
+    title: "Morgan Wallen",
+    number_of_events: 46,
+    img: "https://event-images.tixel.com/cdn-cgi/image/width=100,format=auto/media/images/bb6de011820a2ab772b05e0cd982d8cf_1643164784_0128_s.jpg",
+  },
+  {
+    title: "Knocked Loose",
+    number_of_events: 6,
+    img: "https://event-images.tixel.com/cdn-cgi/image/width=100,format=auto/media/images/71186c86503083f5c75a23e34ae37fd7_1574912198_0936_s.jpg",
+  },
+  {
+    title: "Spiritbox",
+    number_of_events: 10,
+    img: "https://event-images.tixel.com/cdn-cgi/image/width=100,format=auto/media/images/1fd498b971342278a8045b40596aa60a_1658283162_6204_s.jpg",
+  },
+];
+
 const CATEGORIES = [
   {
     name: "Music",
@@ -336,59 +371,95 @@ export default function HomePage() {
         >
           <div className="flex items-baseline space-x-4">
             <h2 className="text-lg md:text-xl lg:text-2xl font-bold flex items-center">
-              What&#39;s Hot
+              What&#39;s hot
             </h2>
           </div>
-          <div className="grid gap-3 lg:grid-cols-4 py-4">
+          <div className="flex items-baseline space-x-4 py-4">
             {HOT_CARD_DETAILS.map((items, key) => (
-              <div
-                className="w-full rounded-lg shadow-md lg:max-w-sm"
-                key={key}
-              >
-                <div className="overflow-hidden rounded-t-lg">
-                  <img
-                    className="m-auto h-auto w-full transform transition-transform group-hover:scale-110 hover:scale-110"
-                    src={items.img}
-                    alt="image"
-                  />
-                </div>
-
-                <div className="p-3 relative">
-                  <p className="text-lg">
-                    <Link href="/k/ampol-state-of-origin" className="font-bold">
-                      Ampol State of Origin
-                    </Link>
-                  </p>
-                  <p className="text-sm">3 upcoming events</p>
-                </div>
+              <div className="flex-none pr-3 w-60 lg:w-1/4" key={key}>
+                <aside className="rounded-lg border-gray-100 border relative overflow-hidden hover:border-gray-300 group">
+                  <div className="flex h-full flex-col">
+                    <div className="aspect-w-2 aspect-h-1 overflow-hidden rounded-t-lg fix-mask-image-border-radius-on-scaling-image">
+                      <img
+                        src={items.img}
+                        className="m-auto h-auto w-full transform transition-transform group-hover:scale-110"
+                        alt="Event Cover"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <p className="text-lg font-bold">
+                        <Link href="/k/rising-melbourne">{items.title}</Link>
+                      </p>
+                      <p>{items.number_of_events} upcoming events</p>
+                    </div>
+                  </div>
+                </aside>
+              </div>
+            ))}
+          </div>
+        </section>
+        <section
+          id="trends-artist"
+          className="pb-6 md:pt-12 md:pb-12 pt-6 max-w-5xl mx-auto relative z-10"
+        >
+          <div className="flex items-baseline space-x-4">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-bold flex items-center">
+              Trending artists
+            </h2>
+          </div>
+          <div className="flex items-baseline space-x-4 py-4">
+            {ARTISTS_CARD_DETAILS.map((items, key) => (
+              <div className="flex-none pr-3 w-60 lg:w-1/4" key={key}>
+                <aside className="relative overflow-hidden border rounded-lg border-gray-100 bg-gray-top-left-slash hover:border-gray-300 group  ">
+                  <Link
+                    href="https://tixel.com/au/music-tickets/spiritbox"
+                    className="block p-6"
+                  >
+                    <div className="flex flex-col h-full">
+                      <div className="p-4 pb-0">
+                        <div className="relative w-16 h-16">
+                          <img
+                            src={items.img}
+                            className="object-cover w-16 h-16 rounded-full"
+                            alt={items.title}
+                          />
+                        </div>
+                      </div>
+                      <div className="p-4">
+                        <p className="font-bold">{items.title}</p>
+                        <p>{items.number_of_events} upcoming events</p>
+                      </div>
+                    </div>
+                  </Link>
+                </aside>
               </div>
             ))}
           </div>
         </section>
         <section className="pb-6 md:pt-12 md:pb-12 pt-6 max-w-5xl mx-auto relative z-10">
-          <div className="flex items-baseline space-x-4">
-            <h2 className="text-lg md:text-xl lg:text-2xl font-bold flex items-center">
-              Browse by Category
-            </h2>
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-6 py-4">
-            {CATEGORIES.map(({ name, imgUrl }, i) => (
-              <div key={i} className="flex-none">
-                <a href="#" title={name}>
-                  <div className="aspect-h-3 aspect-w-4 mb-2 overflow-hidden rounded-lg">
-                    <img
-                      src={`https://tixel.com/cdn-cgi/image/width=400,format=auto/images/genres/${imgUrl}.png`}
-                      className="absolute my-auto h-auto w-full"
-                    />
-                  </div>
-                  <p>
-                    <strong>{name}</strong>
-                  </p>
-                </a>
-              </div>
-            ))}
-          </div>
-        </section>
+        <div className="flex items-baseline space-x-4">
+          <h2 className="text-lg md:text-xl lg:text-2xl font-bold flex items-center">
+            Browse by category
+          </h2>
+        </div>
+        <div className="flex items-baseline space-x-4 py-4">
+          {CATEGORIES.map(({ name, imgUrl }, i) => (
+            <div key={i} className="flex-none pr-3 w-44 md:w-1/6">
+              <Link href="#" title={name}>
+                <div className="aspect-h-3 aspect-w-4 mb-2 overflow-hidden rounded-lg">
+                  <img
+                    src={`https://tixel.com/cdn-cgi/image/width=400,format=auto/images/genres/${imgUrl}.png`}
+                    className="absolute my-auto h-auto w-full"
+                  />
+                </div>
+                <p>
+                  <strong>{name}</strong>
+                </p>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </section>
       </div>
       <footer className="bg-gray-50">
         <div className="mx-auto max-w-5xl px-5">
