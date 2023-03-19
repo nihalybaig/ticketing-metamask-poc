@@ -272,8 +272,9 @@ export default function HomePage() {
                   </h3>
                   <div className="my-6">
                     <input
-                      placeholder="Search Anything"
-                      className="px-3.5 py-2 rounded-full inline-flex w-96 align-middle font-semibold transition-colors leading-tight focus:outline-none space-x-2 relative"
+                      placeholder="Search anything..."
+                      className="px-3.5 py-2 rounded-full inline-flex w-full sm:w-1/2 md:w-2/3 max-w-sm md:max-w-xl align-middle font-semibold leading-tight 
+                      focus:outline-none space-x-2 relative"
                     />
                   </div>
                 </div>
@@ -374,9 +375,9 @@ export default function HomePage() {
               What&#39;s hot
             </h2>
           </div>
-          <div className="flex items-baseline space-x-4 py-4">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 py-4">
             {HOT_CARD_DETAILS.map((items, key) => (
-              <div className="flex-none pr-3 w-60 lg:w-1/4" key={key}>
+              <div className="flex-none" key={key}>
                 <aside className="rounded-lg border-gray-100 border relative overflow-hidden hover:border-gray-300 group">
                   <div className="flex h-full flex-col">
                     <div className="aspect-w-2 aspect-h-1 overflow-hidden rounded-t-lg fix-mask-image-border-radius-on-scaling-image">
@@ -407,13 +408,13 @@ export default function HomePage() {
               Trending artists
             </h2>
           </div>
-          <div className="flex items-baseline space-x-4 py-4">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 py-4">
             {ARTISTS_CARD_DETAILS.map((items, key) => (
-              <div className="flex-none pr-3 w-60 lg:w-1/4" key={key}>
+              <div className="flex-none" key={key}>
                 <aside className="relative overflow-hidden border rounded-lg border-gray-100 bg-gray-top-left-slash hover:border-gray-300 group  ">
                   <Link
                     href="https://tixel.com/au/music-tickets/spiritbox"
-                    className="block p-6"
+                    className="block p-2"
                   >
                     <div className="flex flex-col h-full">
                       <div className="p-4 pb-0">

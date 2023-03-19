@@ -34,3 +34,7 @@ a {
   background-position-y: center;
   background-repeat: no-repeat;
 }
+
+.bg-gray-top-left-slash {
+  background-image: linear-gradient(160deg, #f7f7f7 26%, #fff 26%);
+}
