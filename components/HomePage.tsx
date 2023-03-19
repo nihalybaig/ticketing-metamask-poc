@@ -39,10 +39,44 @@ const CARD_DETAILS = [
 const HOT_CARD_DETAILS = [
   {
     title: "Ampol State of Origin",
-    text: "3 upcoming events",
+    number_of_events: 3,
     img: "https://event-images.tixel.com/cdn-cgi/image/width=600,format=auto/media/images/633ad422bd221f7c33f04d9f7d756c4c_1678837414_7938_l.jpg",
   },
+  {
+    title: "F1 - Formula 1 Rolex Australian Grand Prix 2023",
+    number_of_events: 7,
+    img: "https://public-uploads-production.tixel.com/covers/P86bOMRISBl38Wzf81vOxbRRkLX8DZDrKbPFMnEm.jpg",
+  },
+  {
+    title: "Melbourne International Comedy Festival",
+    number_of_events: 138,
+    img: "https://public-uploads-production.tixel.com/covers/QZs8pY7xaczAXp2H4BH93m4Hwkoei3IY1IhhpAFS.png",
+  },
 ];
+
+const ARTISTS_CARD_DETAILS = [
+  {
+    title: "TIME • RONE",
+    number_of_events: 34,
+    img: "https://event-images.tixel.com/cdn-cgi/image/width=100,format=auto/media/images/4db4c85c7cf1158c2c1e9d33349fd564_1664422183_7867_s.jpg",
+  },
+  {
+    title: "Morgan Wallen",
+    number_of_events: 46,
+    img: "https://event-images.tixel.com/cdn-cgi/image/width=100,format=auto/media/images/bb6de011820a2ab772b05e0cd982d8cf_1643164784_0128_s.jpg",
+  },
+  {
+    title: "Knocked Loose",
+    number_of_events: 6,
+    img: "https://event-images.tixel.com/cdn-cgi/image/width=100,format=auto/media/images/71186c86503083f5c75a23e34ae37fd7_1574912198_0936_s.jpg",
+  },
+  {
+    title: "Spiritbox",
+    number_of_events: 10,
+    img: "https://event-images.tixel.com/cdn-cgi/image/width=100,format=auto/media/images/1fd498b971342278a8045b40596aa60a_1658283162_6204_s.jpg",
+  },
+];
+
 const CATEGORIES = [
   {
     name: "Music",
@@ -69,6 +103,7 @@ const CATEGORIES = [
     imgUrl: `exhibition`,
   },
 ];
+
 export default function HomePage() {
   const [navbar, setNavbar] = useState(false);
 
