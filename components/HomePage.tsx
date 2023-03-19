@@ -43,7 +43,32 @@ const HOT_CARD_DETAILS = [
     img: "https://event-images.tixel.com/cdn-cgi/image/width=600,format=auto/media/images/633ad422bd221f7c33f04d9f7d756c4c_1678837414_7938_l.jpg",
   },
 ];
-
+const CATEGORIES = [
+  {
+    name: "Music",
+    imgUrl: `concerts`
+  },
+  {
+    name: "Sports",
+    imgUrl: `sport`
+  },
+  {
+    name: "Theatre",
+    imgUrl: `theatre`
+  },
+  {
+    name: "Comedy",
+    imgUrl: `comedy`
+  },
+  {
+    name: "Food & drink",
+    imgUrl: `food-and-drink`
+  },
+  {
+    name: "Exhibition",
+    imgUrl: `exhibition`
+  }
+]
 export default function HomePage() {
   const [navbar, setNavbar] = useState(false);
 
@@ -333,11 +358,38 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+      <section
+        className="pb-6 md:pt-12 md:pb-12 pt-6 max-w-5xl mx-auto relative z-10"
+      >
+        <div className="flex items-baseline space-x-4">
+          <h2 className="text-lg md:text-xl lg:text-2xl font-bold flex items-center">
+            What&#39;s Hot
+          </h2>
+        </div>
+        <div className="flex items-baseline space-x-4 py-4">
+          {CATEGORIES.map(({name, imgUrl}, i)=>(<div key={i} className="flex-none pr-3 w-44 md:w-1/6">
+            <a
+              href="#"
+              title={name}
+            >
+              <div className="aspect-h-3 aspect-w-4 mb-2 overflow-hidden rounded-lg">
+                <img
+                  src={`https://tixel.com/cdn-cgi/image/width=400,format=auto/images/genres/${imgUrl}.png`}
+                  className="absolute my-auto h-auto w-full"
+                />
+              </div>
+              <p>
+                <strong>{name}</strong>
+              </p>
+            </a>
+          </div>))}
+        </div>
+      </section>
       <footer className="bg-gray-50">
         <div className="mx-auto max-w-5xl px-5">
           <div className="pt-16 pb-4 md:flex md:flex-wrap lg:pb-16">
             <div className="space-y-lg mb-10 md:w-1/2 lg:mb-0 lg:w-1/4">
-              <h4 className="text-lg md:text-lg lg:text-xl font-bold">
+              <h4 className="text-lg md:text-lg lg:text-xl font-bold mb-4">
                 Join the mosh
               </h4>
               <ul className="space-y-2">
@@ -385,7 +437,7 @@ export default function HomePage() {
             </div>
 
             <div className="space-y-lg mb-10 md:w-1/2 lg:mb-0 lg:w-1/4">
-              <h4 className="text-lg md:text-lg lg:text-xl font-bold">
+              <h4 className="text-lg md:text-lg lg:text-xl font-bold mb-4">
                 The full lineup
               </h4>
               <ul className="space-y-2">
@@ -450,7 +502,7 @@ export default function HomePage() {
             </div>
 
             <div className="space-y-lg mb-10 md:w-1/2 lg:mb-0 lg:w-1/4">
-              <h4 className="text-lg md:text-lg lg:text-xl font-bold">
+              <h4 className="text-lg md:text-lg lg:text-xl font-bold mb-4">
                 More locations
               </h4>
               <ul className="space-y-2">
@@ -489,14 +541,14 @@ export default function HomePage() {
               </ul>
             </div>
             <div className="space-y-lg mb-10 md:w-1/2 lg:mb-0 lg:w-1/4">
-              <h4 className="text-lg md:text-lg lg:text-xl font-bold">
+              <h4 className="text-lg md:text-lg lg:text-xl font-bold mb-4">
                 Events around the world
               </h4>
               <ul className="space-y-2">
                 <li>
                   <Link
                     href="/au/?change=1"
-                    className="font-semibold text-black hover:text-gray-600 space-x-1"
+                    className="text-black hover:text-gray-600 space-x-1"
                   >
                     Australia
                   </Link>
