@@ -442,9 +442,9 @@ export default function HomePage() {
             Browse by category
           </h2>
         </div>
-        <div className="flex items-baseline space-x-4 py-4">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-6 py-4">
           {CATEGORIES.map(({ name, imgUrl }, i) => (
-            <div key={i} className="flex-none pr-3 w-44 md:w-1/6">
+            <div key={i} className="flex-none">
               <Link href="#" title={name}>
                 <div className="aspect-h-3 aspect-w-4 mb-2 overflow-hidden rounded-lg">
                   <img
