@@ -13,7 +13,7 @@ export default function ReachingOut() {
           <div className="md:w-1/2 lg:pt-10">
             <h3 className="text-3xl font-bold">
               <span className="block lg:inline">
-                Reach
+                {`Reach `}
                 <div className="inline-block">
                   <mark className="inline-block relative bg-transparent text-white px-2">
                     <svg
